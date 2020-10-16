@@ -28,6 +28,7 @@
       "disablePlugins": [],
       "outputPath": ""
     },
+    "enableEngineNative": false,
     "useIsolateContext": true,
     "useCompilerModule": true,
     "userConfirmedUseCompilerModuleSwitch": false,
@@ -37,8 +38,8 @@
   },
   "compileType": "miniprogram",
   "libVersion": "2.13.0",
-  "appid": "wxbc2774b77559f35a",
-  "projectname": "chengxuyuandanci",
+  "appid": "wxc8af173789e0ac01",
+  "projectname": "wordlist",
   "debugOptions": {
     "hidedInDevtools": []
   },
