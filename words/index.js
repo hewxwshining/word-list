@@ -1,5 +1,7 @@
 let a = require("./a")
+let b = require("./b")
 let wordDict = {
-  a:Object.values(a)
+  A:Object.values(a),
+  B:Object.values(b)
 }
 module.exports=wordDict

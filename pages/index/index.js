@@ -12,29 +12,14 @@ Page({
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     words: words,
     wordLists: [],
-    num: false
-  },
-  //事件处理函数
-  bindViewTap: function () {
-    wx.navigateTo({
-      url: '../logs/logs'
-    })
+    num: ''
   },
   onLoad: function () {
-    console.log(words)
-    console.log(Object.keys(words))
     this.setData({
       wordLists: Object.keys(words)
     })
   },
-  getUserInfo: function (e) {
-    console.log(e)
-    app.globalData.userInfo = e.detail.userInfo
-    this.setData({
-      userInfo: e.detail.userInfo,
-      hasUserInfo: true
-    })
-  },
+
   onReady: function () {
     let _this = this;
     innerAudioContext.onEnded((e) => {
