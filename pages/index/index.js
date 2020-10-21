@@ -29,10 +29,11 @@ Page({
     })
   },
   audioPlay: function (e) {
+    console.log(e)
     this.setData({
-      num: e.target.dataset.num
+      num: e.currentTarget.dataset.num
     })
-    let url = e.target.dataset.url
+    let url = e.currentTarget.dataset.url
     innerAudioContext.src = "/assets/videos/" +url;
     innerAudioContext.play();
   }

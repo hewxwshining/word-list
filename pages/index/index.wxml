@@ -6,23 +6,23 @@
     <view class="words" wx:for="{{words[group]}}" wx:key="unique" wx:for-index="idy" wx:for-item="item">
       <!-- 单词 -->
       <text class="font-weight-bolder title">{{item.word}} </text>
-      <view class="pt-3">
-        <text data-url="{{item.pronunciation.US.audio}}" data-num="{{group+idy+'US'}}"
-          class="laba iconfont icon-laba001hover {{num == (group + idy+'US') ?'activeLaba':''}}"
-          bindtap="audioPlay"></text>
-        <text class="pr-2">美</text>
-        <text>{{item.pronunciation.US.phonogram}}</text>
+      <view class="content">
+        <view class="pt-3" data-url="{{item.pronunciation.US.audio}}" data-num="{{group+idy+'US'}}" bindtap="audioPlay">
+          <text class="pr-2">美</text>
+          <text>{{item.pronunciation.US.phonogram}}</text>
+          <text class="laba iconfont icon-laba001hover {{num == (group + idy+'US') ?'activeLaba':''}}"></text>
+        </view>
+        <view class="pt-3 pb-3" data-url="{{item.pronunciation.UK.audio}}" data-num="{{group+idy+'UK'}}"
+          bindtap="audioPlay">
+          <text class="pr-2">英</text>
+          <text>{{item.pronunciation.UK.phonogram}}</text>
+          <text class="laba iconfont icon-laba001hover {{num == (group + idy+'UK') ?'activeLaba':''}}"></text>
+        </view>
+        <view class="interpretation">
+          <text>{{item.interpretation}}</text>
+        </view>
       </view>
-      <view class="pt-3 pb-3">
-        <text data-url="{{item.pronunciation.UK.audio}}" data-num="{{group+idy+'UK'}}"
-          class="laba iconfont icon-laba001hover {{num == (group + idy+'UK') ?'activeLaba':''}}"
-          bindtap="audioPlay"></text>
-        <text class="pr-2">英</text>
-        <text>{{item.pronunciation.UK.phonogram}}</text>
-      </view>
-      <view>
-        <text>{{item.interpretation}}</text>
-      </view>
+
     </view>
   </view>
 </view>

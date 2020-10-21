@@ -29,21 +29,26 @@
 }
 
 .laba {
-  color: rgb(0, 0, 0, 0.5);
-  margin-right: 40rpx;
+  color: rgb(235, 51, 66);
+  margin-left: 20rpx;
 }
 
 .activeLaba {
   -webkit-animation: 0.1s linear 0s infinite alternate laba;
   animation: 0.1s linear 0s infinite alternate laba;
 }
-
+.content{
+  color:rgb(165, 165, 182);
+}
+.interpretation{
+  color:rgb(85, 85, 105);
+}
 @keyframes laba {
   from {
-    color: rgb(0, 0, 0, 0.5);
+    color: rgb(165, 165, 182);
   }
 
   to {
-    color: #0083E9;
+    color:  rgb(235, 51, 66);
   }
 }
