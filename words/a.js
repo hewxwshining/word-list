@@ -1,7 +1,7 @@
 module.exports = {
   "application": {
     word: "application",
-    interpretation: "n. 应用程式 应用、应用程序",
+    interpretation: "n. 应用程式 应用、应用程序 ",
     pronunciation:{
       UK:{
         phonogram: "[ˌæp.lɪˈkeɪ.ʃən]",
@@ -16,7 +16,7 @@ module.exports = {
 
   "architecture": {
     word: "architecture",
-    interpretation: "n. 建筑学；建筑物；组织，系统架构",
+    interpretation: "n. 建筑学；建筑物；组织，系统架构 ",
     pronunciation:{
       UK:{
         phonogram: "[ˈɑː.kɪ.tek.tʃər]",
@@ -44,7 +44,7 @@ module.exports = {
   },
   "array": {
     word: "array",
-    interpretation: "n. 阵列，数组   vt. 排列； 部署",
+    interpretation: "n. 阵列，数组   vt. 排列； 部署 ",
     pronunciation:{
       UK:{
         phonogram: "[əˈreɪ]",

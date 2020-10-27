@@ -1,7 +1,8 @@
 /**index.wxss**/
 .container {
-  scroll-behavior:smooth;
+  scroll-behavior: smooth;
 }
+
 .group {
   background-color: #f3f3f3;
   padding: 20rpx 30rpx;
@@ -14,7 +15,7 @@
 }
 
 .words {
-  padding: 30rpx 40rpx;
+  padding: 15px 15px;
   border-bottom: 1px solid #f3f3f3;
 }
 
@@ -37,18 +38,56 @@
   -webkit-animation: 0.1s linear 0s infinite alternate laba;
   animation: 0.1s linear 0s infinite alternate laba;
 }
-.content{
-  color:rgb(165, 165, 182);
+
+.content {
+  color: rgb(165, 165, 182);
 }
-.interpretation{
-  color:rgb(85, 85, 105);
+
+.interpretation {
+  color: rgb(85, 85, 105);
 }
+
 @keyframes laba {
   from {
     color: rgb(165, 165, 182);
   }
 
   to {
-    color:  rgb(235, 51, 66);
+    color: rgb(235, 51, 66);
   }
+}
+
+
+.shape {
+  float: right;
+  width: 40px;
+  /* shape-outside:  polygon(30px 40px, 10px 43px, 0px 50px, 0px 550px, 10px 557px, 30px 560px, 30px 30px); */
+  transition: shape-outside .15s;
+  /* background-color:rgba(0,0,0,0.5); */
+}
+
+
+.alphabet {
+  width:40px;
+  /* background: rgba(0, 0, 0,0.5); */
+  position: fixed;
+  color: #000;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0;
+  z-index: 4;
+  padding: 5px 0px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.alphabet text {
+  display: block;
+  font-size: 12px;
+  padding: 1px 0;
+  text-align: center;
+}
+.alphabet text.current{
+  color: #f00;
+  font-weight: bold;
 }

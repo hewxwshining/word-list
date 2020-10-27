@@ -1,28 +1,38 @@
 <!--index.wxml-->
-<view class="container">
-  <view class="wrapper" wx:for="{{wordLists}}" wx:key="unique" wx:for-index="idx" wx:for-item="group">
-    <!-- 分组 -->
-    <view class="group">{{group}}</view>
-    <view class="words" wx:for="{{words[group]}}" wx:key="unique" wx:for-index="idy" wx:for-item="item">
-      <!-- 单词 -->
-      <text class="font-weight-bolder title">{{item.word}} </text>
-      <view class="content">
-        <view class="pt-3" data-url="{{item.pronunciation.US.audio}}" data-num="{{group+idy+'US'}}" bindtap="audioPlay">
-          <text class="pr-2">美</text>
-          <text>{{item.pronunciation.US.phonogram}}</text>
-          <text class="laba iconfont icon-laba001hover {{num == (group + idy+'US') ?'activeLaba':''}}"></text>
-        </view>
-        <view class="pt-3 pb-3" data-url="{{item.pronunciation.UK.audio}}" data-num="{{group+idy+'UK'}}"
-          bindtap="audioPlay">
-          <text class="pr-2">英</text>
-          <text>{{item.pronunciation.UK.phonogram}}</text>
-          <text class="laba iconfont icon-laba001hover {{num == (group + idy+'UK') ?'activeLaba':''}}"></text>
-        </view>
-        <view class="interpretation">
-          <text>{{item.interpretation}}</text>
-        </view>
-      </view>
-
+<scroll-view scroll-y="{{true}}" scroll-into-view="{{toListItem}}" bindscroll="scroll"
+  style="height:{{clientHeight}}px;">
+  <view class="container" id="conatainer" bindscroll="scroll">
+    <i id="shape" class="shape" style="height:{{shapeHeight}}px; shape-outside:{{shapeOutside}}"></i>
+    <view id="alphabet" class="alphabet" catchtouchstart="onShortcutTouchStart" catchtouchmove="onShortcutTouchMove">
+      <text wx:for="{{alphabet}}" wx:key="unique" wx:for-index="idx" data-index="{{idx}}"
+        class="{{alphabetIndex == idx ? 'current':''}}">{{item}}</text>
     </view>
+    <!-- <view id="wrapper" class="list"> -->
+    <view class="list-item" wx:for="{{alphabet}}" wx:key="unique" wx:for-index="idx" wx:for-item="group"
+      id="list-item-{{idx}}">
+      <view class="group">{{group}}</view>
+      <view class="words" wx:for="{{words[group]}}" wx:key="unique" wx:for-index="idy" wx:for-item="item">
+        <text class="font-weight-bolder title">{{item.word}} </text>
+        <view class="content">
+          <view class="pt-3" data-url="{{item.pronunciation.US.audio}}" data-num="{{group+idy+'US'}}"
+            bindtap="audioPlay">
+            <text class="pr-2">美</text>
+            <text>{{item.pronunciation.US.phonogram}}</text>
+            <text class="laba iconfont icon-laba001hover {{num == (group + idy+'US') ?'activeLaba':''}}"></text>
+          </view>
+          <view class="pt-3 pb-3" data-url="{{item.pronunciation.UK.audio}}" data-num="{{group+idy+'UK'}}"
+            bindtap="audioPlay">
+            <text class="pr-2">英</text>
+            <text>{{item.pronunciation.UK.phonogram}}</text>
+            <text class="laba iconfont icon-laba001hover {{num == (group + idy+'UK') ?'activeLaba':''}}"></text>
+          </view>
+          <view class="interpretation">
+            <text>{{item.interpretation}}</text>
+          </view>
+        </view>
+
+      </view>
+    </view>
+    <!-- </view> -->
   </view>
-</view>
+</scroll-view>
