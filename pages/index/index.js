@@ -61,12 +61,15 @@ Page({
   },
 
   audioPlay: function (e) {
-    this.setData({
-      num: e.currentTarget.dataset.num
-    })
+
     let url = e.currentTarget.dataset.url
-    innerAudioContext.src = "/assets/videos/" + url;
-    innerAudioContext.play();
+    if (url != "") {
+      this.setData({
+        num: e.currentTarget.dataset.num
+      })
+      innerAudioContext.src = "/assets/videos/" + url;
+      innerAudioContext.play();
+    }
   },
   funShape() {
     let _this = this;
