@@ -61,7 +61,6 @@ Page({
   },
 
   audioPlay: function (e) {
-
     let url = e.currentTarget.dataset.url
     if (url != "") {
       this.setData({
@@ -96,12 +95,10 @@ Page({
       },
       toListItem: 'list-item-' + alphabetIndex
     })
-
   },
   onShortcutTouchMove(e) {
-    let firstTouch = e.touches[0];
     let touch = this.data.touch;
-    touch.y2 = firstTouch.pageY;
+    touch.y2 = e.touches[0].pageY;
     let delta = (touch.y2 - touch.y1) / ALPHABET_HEIGHT | 0
     let alphabetIndex = parseInt(touch.alphabetIndex) + delta;
     this.setData({
@@ -130,7 +127,6 @@ Page({
       let height1 = listHeight[i]
       let height2 = listHeight[i + 1]
       if (scrolltop >= height1 && scrolltop < height2) {
-        // this.diff = height2 + scrolltop
         this.setData({
           alphabetIndex: i
         })
