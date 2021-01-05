@@ -17,6 +17,8 @@ Math.easeout = function (A, B, rate, callback) {
   };
   step();
 };
+
+
 module.exports = {
   scrollTop: Math.easeout
 }

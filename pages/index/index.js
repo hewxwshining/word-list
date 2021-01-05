@@ -2,6 +2,9 @@
 //获取应用实例
 const app = getApp()
 let words = require("../../words/index")
+let {
+  debounce
+} = require("../../utils/util")
 const innerAudioContext = wx.createInnerAudioContext()
 const ALPHABET_HEIGHT = 20
 const ALPHABET_WIDTH = 30
@@ -107,21 +110,21 @@ Page({
       toListItem: 'list-item-' + alphabetIndex
     })
   },
-  scrollTo() {
-
+  scrollTo(e) {
+    let fn =  debounce(this.scroll, 100)
+    fn(e);
   },
   scroll(e) {
     this.funShape();
-    let scrolltop = e.detail.scrollTop;
+    let scrolltop = e.detail.scrollTop+2;
     let listHeight = this.data.listHeight;
     // 当滚动到顶部，newY>0
-    if (scrolltop < 20) {
+    if (scrolltop < 10) {
       this.setData({
         alphabetIndex: 0
       })
       return
     }
-
     // 在中间部分滚动
     for (let i = 0; i < listHeight.length - 1; i++) {
       let height1 = listHeight[i]

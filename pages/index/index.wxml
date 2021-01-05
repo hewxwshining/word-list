@@ -1,5 +1,5 @@
 <!--index.wxml-->
-<scroll-view scroll-y="{{true}}" scroll-into-view="{{toListItem}}" bindscroll="scroll"
+<scroll-view scroll-y="{{true}}" scroll-into-view="{{toListItem}}" bindscroll="scrollTo"
   style="height:{{clientHeight}}px;">
   <view class="container" id="conatainer" bindscroll="scroll">
     <i id="shape" class="shape" style="height:{{shapeHeight}}px; shape-outside:{{shapeOutside}}"></i>

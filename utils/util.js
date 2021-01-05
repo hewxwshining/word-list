@@ -14,6 +14,18 @@ const formatNumber = n => {
   return n[1] ? n : '0' + n
 }
 
+function debounce(fn, wait) {
+  var timeout = null;
+  return function () {
+    let context = this;
+    let args = arguments;
+    if (timeout) clearTimeout(timeout);
+    timeout = setTimeout(() => {
+      fn.apply(context, args)
+    }, wait)
+  }
+}
 module.exports = {
-  formatTime: formatTime
+  formatTime: formatTime,
+  debounce: debounce
 }
