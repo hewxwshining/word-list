@@ -6,8 +6,10 @@ let {
   debounce
 } = require("../../utils/util")
 const innerAudioContext = wx.createInnerAudioContext()
-const ALPHABET_HEIGHT = 20
-const ALPHABET_WIDTH = 30
+const ALPHABET_HEIGHT = 20;
+const ALPHABET_WIDTH = 30;
+
+let test = null;
 Page({
   data: {
     clientHeight: "",
@@ -28,6 +30,8 @@ Page({
     toListItem: 'list-item-0'
   },
   onLoad: function () {
+    test =  debounce(this.scroll, 200);
+
     let res = wx.getSystemInfoSync();
     this.setData({
       clientHeight: res.windowHeight,
@@ -111,12 +115,12 @@ Page({
     })
   },
   scrollTo(e) {
-    let fn =  debounce(this.scroll, 100)
-    fn(e);
+    test(e);
   },
+
   scroll(e) {
     this.funShape();
-    let scrolltop = e.detail.scrollTop+2;
+    let scrolltop = e.detail.scrollTop + 2;
     let listHeight = this.data.listHeight;
     // 当滚动到顶部，newY>0
     if (scrolltop < 10) {
