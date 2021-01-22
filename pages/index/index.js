@@ -8,7 +8,7 @@ let {
 const innerAudioContext = wx.createInnerAudioContext()
 const ALPHABET_HEIGHT = 20;
 const ALPHABET_WIDTH = 30;
-
+console.log(words)
 let test = null;
 Page({
   data: {
@@ -20,7 +20,8 @@ Page({
     words: words,
     listHeight: [],
     num: '',
-    alphabet: ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"],
+    // alphabet: ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"],
+    alphabet: Reflect.ownKeys(words),
     //shape 部分
     shapeHeight: "",
     shapeOutside: "",
